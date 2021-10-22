@@ -13,7 +13,7 @@ workspace:
       # Image should already be registered in your coder's organization.
       # Use the image's repo name.
       image:
-        value: codercom/enterprise-base
+        value: codercom/enterprise-base:ubuntu
       container-based-vm:
         value: true
       cpu:
