@@ -13,7 +13,7 @@ workspace:
       # Image should already be registered in your coder's organization.
       # Use the image's repo name.
       image:
-        value: coder-dogfood/master/enterprise-dev-ubuntu:latest
+        value: codercom/enterprise-base
       container-based-vm:
         value: true
       cpu:
