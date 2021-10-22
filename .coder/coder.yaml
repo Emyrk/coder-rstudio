@@ -16,7 +16,7 @@ workspace:
         # value: codercom/enterprise-base:ubuntu
         value: coder-dogfood/master/enterprise-dev-ubuntu
       container-based-vm:
-        value: false
+        value: true
       cpu:
         value: 2
       memory:
