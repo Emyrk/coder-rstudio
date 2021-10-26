@@ -6,6 +6,4 @@ if ! ssh-keygen -F github.com > /dev/null; then
   ssh-keyscan github.com >> ~/.ssh/known_hosts 2> /dev/null
 fi
 
-if
-
 envsubst < /tmp/rstudio-config.yaml >> /coder/apps/config.yaml

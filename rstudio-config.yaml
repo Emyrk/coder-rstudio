@@ -11,6 +11,8 @@ apps:
     # Host of the application to use when dialing. Defaults to localhost.
     # Optional.
     host: "localhost"
+    headers:
+      X-Forwarded-Proto: https
     # Working directory for the start command. Required.
     working-directory: /home/coder
     # File path to icon used in application launcher. Icons should be either
@@ -33,13 +35,14 @@ apps:
         args: ["rserver"]
       # http sends a GET request to the address specified via the parameters.
       # It expects a 200 status code to report healthy.
-#      http:
-#        # Scheme must be "http" or "https". If not specified it inherits
-#        # the application scheme. Optional.
-#        scheme: "http"
-#        # The host to use when dialing the address. If not specified it
-#        # inherits the application host. Optional.
-#        host: "localhost"
-#        # Port to use when dialing the application. If not specified it
-#        # inherits the application port. Optional.
-#        port: 8787
+      http:
+        # Scheme must be "http" or "https". If not specified it inherits
+        # the application scheme. Optional.
+        scheme: "http"
+        # The host to use when dialing the address. If not specified it
+        # inherits the application host. Optional.
+        host: "localhost"
+        # Port to use when dialing the application. If not specified it
+        # inherits the application port. Optional.
+        port: 8787
+        status_code: 302
