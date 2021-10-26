@@ -15,20 +15,13 @@ apps:
     working-directory: /home/coder
     # File path to icon used in application launcher. Icons should be either
     # PNG, SVG, or JPG. Required.
-    icon-path: /home/coder/fun.png
+    icon-path: /usr/lib/rstudio-server/www/images/rstudio-logo.png
     # Command to start the application. Required.
     command: /usr/lib/rstudio-server/bin/rserver
     # Array of arguments for command. Optional.
     args:
       - "--server-daemonize=1"
-      - "--server-pid-file=/home/coder/rstudio/rstudio-server.pid"
-      - "--www-frame-origin=same"
-      - "--server-data-dir=/home/coder/rstudio/data"
-      # Must set the db directory in this config
-      # https://docs.rstudio.com/ide/server-pro/database/configuration.html#sqlite
-      - "--database-config-file=/home/coder/rstudio/database.conf"
-      - "--server-user=coder"
-      - "--www-root-path={{ env CODER_WORKSPACE_ID }}"
+      - "--www-root-path=/api/v0/workspaces/${CODER_WORKSPACE_ID}/proxy/apps/my-rstudio/"
     # Health checks to get running application status. Can use exec or http
     # health checks to localhost. It is recommended to specify a health-check
     # although not strictly required. If one is not supplied then an http
