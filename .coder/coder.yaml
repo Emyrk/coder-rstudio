@@ -1,10 +1,3 @@
-# yaml-language-server: $schema=https://master.cdr.dev/api/private/template/schemas/wac.schema.json
-#
-# Assuming oauth works correctly,
-# $ coder workspaces create-from-config --repo-url https://github.com/cdr/m --org Coder --name devenv-test
-#
-# It is also possible to create this from a checked-out repository using:
-# $ coder workspaces create-from-config --filepath .coder/coder.yaml --org Coder --name devenv-test
 version: 0.2
 workspace:
   type: "kubernetes"
@@ -14,32 +7,12 @@ workspace:
       # Use the image's repo name.
       image:
         # value: codercom/enterprise-base:ubuntu
-        value: coder-dogfood/master/enterprise-dev-ubuntu
+        value: docker pull emyrk/coder-rstudio
       container-based-vm:
-        value: true
+        value: false
       cpu:
         value: 2
       memory:
         value: 2
       disk:
         value: 20
-  # dev-urls:
-  #   value:
-  #     - name: "coderdoc"
-  #       scheme: "http"
-  #       port: 3000
-  #       access: "org"
-  #     - name: "devprod"
-  #       scheme: "http"
-  #       port: 8080
-  #       access: "private"
-  # Our configure section duplicates the /coder/configure script
-  # this is simply for dogfooding's sake.
-  configure:
-    start:
-      value:
-        - name: "Write rstudio database config"
-          command: |
-            echo "provider=sqlite" > $HOME/database.conf"
-            echo "directory=/home/coder/rstudio/sql"
-          continue-on-error: true
