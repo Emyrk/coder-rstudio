@@ -45,4 +45,4 @@ apps:
         # Port to use when dialing the application. If not specified it
         # inherits the application port. Optional.
         port: 8787
-        status_code: 302
+        status-code: 302
